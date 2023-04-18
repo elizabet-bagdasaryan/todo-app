@@ -1,0 +1,32 @@
+body {
+  background-image: url(./assets/light-mobile.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  font-family: "Josefin Sans", sans-serif;
+  padding: 5vw;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+header h1 {
+  letter-spacing: 10px;
+}
+#moon {
+  transform: rotate(155deg);
+}
+
+@media (min-width: 768px) {
+  body {
+    background-image: url(./assets/light-desktop.png);
+    padding: 5vw 10vw;
+  }
+  .App {
+    width: 60vw;
+    margin: auto;
+  }
+}
