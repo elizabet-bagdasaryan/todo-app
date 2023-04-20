@@ -1,14 +1,29 @@
 import { useState } from "react";
 
 import "./NewItem.css";
-function newItem() {
+function newItem({ onSubmit }) {
+  const [newItem, setNewItem] = useState("");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (newItem === "") return;
+
+    onSubmit(newItem);
+
+    setNewItem("");
+  }
   return (
-    <div className="section">
+    <form className="section" onSubmit={handleSubmit}>
       <div>
         <button></button>
-        <input type="text"></input>
+        <input
+          value={newItem}
+          onChange={(e) => setNewItem(e.target.value)}
+          type="text"
+          id="item"
+        ></input>
       </div>
-    </div>
+    </form>
   );
 }
 

@@ -5,11 +5,22 @@ import ToDoItem from "./ToDoItem.jsx";
 
 import "./ToDos.css";
 
-function ToDos() {
+function ToDos({ todos, toggleTodo, deleteTodo }) {
   return (
     <div className="list">
       <div className="items">
-        <ToDoItem />
+        {todos.length === 0 && "No Todos"}
+        {todos.map((todo) => {
+          return (
+            <ToDoItem
+              {...todo}
+              key={todo.id}
+              toggleTodo={toggleTodo}
+              deleteTodo={deleteTodo}
+            />
+          );
+        })}
+
         <div id="items-clear">
           <p> items left</p>
           <p>Clear</p>
