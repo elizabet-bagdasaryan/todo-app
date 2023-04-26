@@ -12,6 +12,7 @@ function ToDoItem({ completed, id, title, toggleTodo, deleteTodo }) {
             checked={completed}
             onChange={(e) => toggleTodo(id, e.target.checked)}
           />
+          <p id="texts-todos"> {title}</p>
           <span class="checkmark"></span>
         </label>
         <CloseIcon id="close" onClick={() => deleteTodo(id)} />

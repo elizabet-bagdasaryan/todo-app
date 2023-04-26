@@ -6,10 +6,24 @@ import ToDoItem from "./ToDoItem.jsx";
 import "./ToDos.css";
 
 function ToDos({ todos, toggleTodo, deleteTodo }) {
+  const count = todos.length;
+  console.log(count);
+  const [block, setBlock] = useState(false);
+
+  function handleZero() {
+    if (todos.length === 0) {
+      setBlock(true);
+    }
+  }
+
   return (
-    <div className="list">
+    <div
+      className="list"
+      style={{
+        display: block ? "none" : "block",
+      }}
+    >
       <div className="items">
-        {todos.length === 0 && "No Todos"}
         {todos.map((todo) => {
           return (
             <ToDoItem
@@ -22,11 +36,11 @@ function ToDos({ todos, toggleTodo, deleteTodo }) {
         })}
 
         <div id="items-clear">
-          <p> items left</p>
-          <p>Clear</p>
+          <p> {count} items left</p>
+          <p onClick={handleZero}>Clear</p>
         </div>
         <div className="desk-last-section">
-          <p> items left</p>
+          <p>{count} items left</p>
           <div>
             <p>All</p>
             <p>Active</p>

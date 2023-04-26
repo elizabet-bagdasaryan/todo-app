@@ -11,7 +11,6 @@
   user-select: none;
 }
 
-/* Hide the browser's default checkbox */
 .container input {
   position: absolute;
   opacity: 0;
@@ -20,7 +19,6 @@
   width: 0;
 }
 
-/* Create a custom checkbox */
 .checkmark {
   position: absolute;
   top: 0;
@@ -31,6 +29,7 @@
   border-radius: 50%;
   border: 1px solid #d1d2da;
   background-color: transparent;
+  margin-top: 14px;
 }
 
 .container:hover input ~ .checkmark {
@@ -42,6 +41,10 @@
 
 .container input:checked ~ .checkmark {
   background: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
+  border: none;
+}
+.container input:checked ~ input {
+  text-decoration: line-through;
 }
 
 .checkmark:after {
@@ -52,6 +55,16 @@
 
 .container input:checked ~ .checkmark:after {
   display: block;
+}
+.container input:checked ~ #texts-todos {
+  text-decoration: line-through;
+  color: #d1d2da;
+  transition: opacity 300ms ease-in-out;
+  transition-delay: 200ms;
+  opacity: 0.5;
+}
+.container input:checked ~ #close {
+  color: red;
 }
 
 .container .checkmark:after {
@@ -67,14 +80,24 @@
 }
 
 hr {
-  opacity: 50%;
+  opacity: 40%;
 }
 
 #close {
-  color: #979797;
+  color: #acacac;
   width: 28px;
   height: 28px;
   cursor: pointer;
+  margin-top: -8px;
+}
+
+#close:hover {
+  color: #979797;
+}
+
+#texts-todos {
+  font-size: 18px;
+  color: #494c6b;
 }
 
 .item div {

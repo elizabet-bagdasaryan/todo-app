@@ -12,6 +12,7 @@ function newItem({ onSubmit }) {
 
     setNewItem("");
   }
+
   return (
     <form className="section" onSubmit={handleSubmit}>
       <div>
@@ -21,6 +22,7 @@ function newItem({ onSubmit }) {
           onChange={(e) => setNewItem(e.target.value)}
           type="text"
           id="item"
+          placeholder="Create a new todo…"
         ></input>
       </div>
     </form>

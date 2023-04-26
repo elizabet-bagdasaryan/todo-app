@@ -1,6 +1,6 @@
 .section {
   background-color: white;
-  padding: 18px;
+  padding: 20px;
   border-radius: 5px;
   margin-top: 40px;
 }
@@ -13,9 +13,9 @@
 input {
   border: none;
   width: 100%;
-  color: #9495a5;
+  color: #393a4b;
   margin-left: 12px;
-  font-size: 16px;
+  font-size: 18px;
 }
 textarea:focus,
 input:focus {
@@ -23,8 +23,22 @@ input:focus {
 }
 button {
   border-radius: 50%;
-  height: 22px;
-  width: 22px;
+  height: 26px;
+  width: 26px;
   border: 1px solid #d1d2da;
   background-color: transparent;
+  cursor: pointer;
+  box-shadow: 0 6px #c0c0c0;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
+  border: none;
+}
+
+button:active {
+  background: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
+  box-shadow: 0 5px #ababab;
+  transform: translateY(4px);
+  border: none;
 }
