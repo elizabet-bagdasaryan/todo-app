@@ -59,14 +59,7 @@ function App() {
         backgroundColor: isActive ? "#171823" : "white",
       }}
     >
-      <div
-        className="App"
-        style={{
-          backgroundImage: `url(${isActive ? DarkMobile : LightMobile})`,
-          backgroundSize: "100vw 50vh",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
+      <div className={isActive ? "App-dark" : "App"}>
         <div className="main">
           <header>
             <h1>TODO </h1>
@@ -94,6 +87,14 @@ function App() {
           />
         </div>
       </div>
+      <p
+        className="drag"
+        style={{
+          color: isActive ? "#5B5E7E" : "#9495a5",
+        }}
+      >
+        Drag and drop to reorder list
+      </p>
     </div>
   );
 }

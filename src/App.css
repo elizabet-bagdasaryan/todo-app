@@ -1,3 +1,14 @@
+.App {
+  background-image: url(./assets/light-mobile.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 40%;
+}
+.App-dark {
+  background-image: url(./assets/dark-mobile.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 40%;
+}
+
 body {
   background-repeat: no-repeat;
   font-family: "Josefin Sans", sans-serif;
@@ -25,8 +36,20 @@ header h1 {
 #sun {
   cursor: pointer;
 }
-
+.page {
+  height: 100vh;
+}
+.drag {
+  text-align: center;
+  font-weight: 600;
+}
 @media (min-width: 768px) {
+  .App {
+    background-image: url(./assets/light-desktop.png);
+  }
+  .App-dark {
+    background-image: url(./assets/dark-desktop.jpg);
+  }
   .main {
     width: 60vw;
     margin: auto;

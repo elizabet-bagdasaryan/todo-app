@@ -8,7 +8,8 @@ function ToDos({ todos, toggleTodo, deleteTodo, isActive }) {
   const [filter, setFilter] = useState("all");
 
   const handleClearClick = () => {
-    todos.forEach((todo) => deleteTodo(todo.id));
+    const completedTodos = todos.filter((todo) => todo.completed);
+    completedTodos.forEach((todo) => deleteTodo(todo.id));
   };
 
   const filteredTodos = todos.filter((todo) => {
@@ -60,7 +61,6 @@ function ToDos({ todos, toggleTodo, deleteTodo, isActive }) {
               isActive={isActive}
             />
           );
-          <hr />;
         })}
 
         <div id="items-clear">
@@ -68,7 +68,7 @@ function ToDos({ todos, toggleTodo, deleteTodo, isActive }) {
             {" "}
             {count} {itemText}
           </p>
-          <p onClick={handleClearClick}>Clear</p>
+          <p onClick={handleClearClick}>Clear Completed</p>
         </div>
         <div
           className={isActive ? "desk-last-section-dark" : "desk-last-section"}
@@ -96,7 +96,7 @@ function ToDos({ todos, toggleTodo, deleteTodo, isActive }) {
               Completed
             </p>
           </div>
-          <p onClick={handleClearClick}>Clear</p>
+          <p onClick={handleClearClick}>Clear Completed</p>
         </div>
       </div>
       <div className={isActive ? "filters-dark" : "filters"}>

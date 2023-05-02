@@ -130,3 +130,9 @@ hr {
   justify-content: space-between;
   align-items: center;
 }
+.item-dark hr {
+  opacity: 0.08;
+}
+.item-dark #close {
+  opacity: 0.3;
+}

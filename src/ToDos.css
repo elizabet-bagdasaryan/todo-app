@@ -22,13 +22,14 @@
 }
 
 .list {
-  margin-top: 20px;
+  margin-top: 30px;
   border-radius: 5px;
 }
 #items-clear {
   display: flex;
   justify-content: space-between;
   color: #9495a5;
+  padding: 14px 18px;
 }
 .desk-last-section {
   display: none;
@@ -42,7 +43,6 @@
   margin-bottom: 20px;
   background-color: #25273d;
   border-radius: 5px;
-
   box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
 }
 .filters-dark {
@@ -87,6 +87,7 @@
   }
   .desk-last-section div {
     display: flex;
+    font-weight: 600;
   }
   .desk-last-section div p,
   .desk-last-section-dark div p {
