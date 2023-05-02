@@ -42,3 +42,19 @@ button:active {
   transform: translateY(4px);
   border: none;
 }
+
+.section-dark {
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 40px;
+}
+
+.section-dark div {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  color: white;
+}
+.section-dark input {
+  color: #c8cbe7;
+}

@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import "./NewItem.css";
-function newItem({ onSubmit }) {
+function newItem({ onSubmit, isActive }) {
   const [newItem, setNewItem] = useState("");
 
   function handleSubmit(e) {
@@ -14,7 +14,13 @@ function newItem({ onSubmit }) {
   }
 
   return (
-    <form className="section" onSubmit={handleSubmit}>
+    <form
+      onSubmit={handleSubmit}
+      className={isActive ? "section-dark" : "section"}
+      style={{
+        backgroundColor: isActive ? "#25273D" : "#fff",
+      }}
+    >
       <div>
         <button></button>
         <input
@@ -23,6 +29,9 @@ function newItem({ onSubmit }) {
           type="text"
           id="item"
           placeholder="Create a new todo…"
+          style={{
+            backgroundColor: isActive ? "#25273D" : "#fff",
+          }}
         ></input>
       </div>
     </form>

@@ -1,10 +1,13 @@
 body {
-  background-image: url(./assets/light-mobile.jpg);
   background-repeat: no-repeat;
-  background-size: 100%;
   font-family: "Josefin Sans", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
+.main {
+  padding: 5vw;
+}
 header {
   display: flex;
   justify-content: space-between;
@@ -24,12 +27,9 @@ header h1 {
 }
 
 @media (min-width: 768px) {
-  body {
-    background-image: url(./assets/light-desktop.png);
-    padding: 5vw 10vw;
-  }
-  .App {
+  .main {
     width: 60vw;
     margin: auto;
+    padding: 5vw 10vw;
   }
 }

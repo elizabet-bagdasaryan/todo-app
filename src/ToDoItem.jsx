@@ -2,10 +2,10 @@ import { useState } from "react";
 
 import "./ToDoItem.css";
 import CloseIcon from "@mui/icons-material/Close";
-function ToDoItem({ completed, id, title, toggleTodo, deleteTodo }) {
+function ToDoItem({ completed, id, title, toggleTodo, deleteTodo, isActive }) {
   return (
-    <div className="item">
-      <div>
+    <div className={isActive ? "item-dark" : "item"}>
+      <div className={isActive ? "item-dark-child" : "item-child"}>
         <label class="container">
           <input
             type="checkbox"
@@ -14,8 +14,8 @@ function ToDoItem({ completed, id, title, toggleTodo, deleteTodo }) {
           />
           <p id="texts-todos"> {title}</p>
           <span class="checkmark"></span>
+          <CloseIcon id="close" onClick={() => deleteTodo(id)} />{" "}
         </label>
-        <CloseIcon id="close" onClick={() => deleteTodo(id)} />
       </div>
       <hr />
     </div>

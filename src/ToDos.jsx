@@ -1,11 +1,10 @@
 import { useState } from "react";
 
-import CloseIcon from "@mui/icons-material/Close";
 import ToDoItem from "./ToDoItem.jsx";
 
 import "./ToDos.css";
 
-function ToDos({ todos, toggleTodo, deleteTodo }) {
+function ToDos({ todos, toggleTodo, deleteTodo, isActive }) {
   const [filter, setFilter] = useState("all");
 
   const handleClearClick = () => {
@@ -24,10 +23,33 @@ function ToDos({ todos, toggleTodo, deleteTodo }) {
 
   const count = filteredTodos.length;
   const itemText = count === 1 ? "item left" : "items left";
+  const [selectedElement, setSelectedElement] = useState(null);
+  const handleClick = (id) => {
+    setSelectedElement(id);
+  };
+
+  const allFunc = () => {
+    setFilter("all");
+    handleClick(1);
+  };
+  const activeFunc = () => {
+    setFilter("active");
+    handleClick(2);
+  };
+
+  const completedFunc = () => {
+    setFilter("completed");
+    handleClick(3);
+  };
 
   return (
-    <div className="list">
-      <div className="items">
+    <div
+      className="list"
+      style={{
+        backgroundColor: isActive ? "#25273D" : "#fff",
+      }}
+    >
+      <div className={isActive ? "items-dark" : "items"}>
         {filteredTodos.map((todo) => {
           return (
             <ToDoItem
@@ -35,8 +57,10 @@ function ToDos({ todos, toggleTodo, deleteTodo }) {
               key={todo.id}
               toggleTodo={toggleTodo}
               deleteTodo={deleteTodo}
+              isActive={isActive}
             />
           );
+          <hr />;
         })}
 
         <div id="items-clear">
@@ -46,34 +70,51 @@ function ToDos({ todos, toggleTodo, deleteTodo }) {
           </p>
           <p onClick={handleClearClick}>Clear</p>
         </div>
-        <div className="desk-last-section">
+        <div
+          className={isActive ? "desk-last-section-dark" : "desk-last-section"}
+        >
           <p>
             {count} {itemText}
           </p>
           <div>
-            <p onClick={() => setFilter("all")}>All</p>
-            <p onClick={() => setFilter("active")}>Active</p>
-            <p onClick={() => setFilter("completed")}>Completed</p>
+            <p
+              onClick={allFunc}
+              className={selectedElement === 1 ? "selected" : ""}
+            >
+              All
+            </p>
+            <p
+              onClick={activeFunc}
+              className={selectedElement === 2 ? "selected" : ""}
+            >
+              Active
+            </p>
+            <p
+              onClick={completedFunc}
+              className={selectedElement === 3 ? "selected" : ""}
+            >
+              Completed
+            </p>
           </div>
           <p onClick={handleClearClick}>Clear</p>
         </div>
       </div>
-      <div className="filters">
+      <div className={isActive ? "filters-dark" : "filters"}>
         <p
-          className={filter === "all" ? "active" : ""}
-          onClick={() => setFilter("all")}
+          onClick={allFunc}
+          className={selectedElement === 1 ? "selected" : ""}
         >
           All
         </p>
         <p
-          className={filter === "active" ? "active" : ""}
-          onClick={() => setFilter("active")}
+          onClick={activeFunc}
+          className={selectedElement === 2 ? "selected" : ""}
         >
           Active
         </p>
         <p
-          className={filter === "completed" ? "active" : ""}
-          onClick={() => setFilter("completed")}
+          onClick={completedFunc}
+          className={selectedElement === 3 ? "selected" : ""}
         >
           Completed
         </p>

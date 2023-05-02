@@ -1,14 +1,16 @@
 .container {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   position: relative;
   padding-left: 35px;
-  margin-bottom: 12px;
   cursor: pointer;
   font-size: 22px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  width: 100%;
 }
 
 .container input {
@@ -64,7 +66,7 @@
   opacity: 0.5;
 }
 .container input:checked ~ #close {
-  color: red;
+  display: none;
 }
 
 .container .checkmark:after {
@@ -88,7 +90,7 @@ hr {
   width: 28px;
   height: 28px;
   cursor: pointer;
-  margin-top: -8px;
+  display: flex;
 }
 
 #close:hover {
@@ -105,5 +107,26 @@ hr {
   justify-content: space-between;
   align-items: center;
 }
+.item-child {
+  padding: 14px;
+}
 
+.item-dark-child {
+  padding: 14px;
+}
+.item-dark #texts-todos {
+  color: #c8cbe7;
+}
 
+.item-dark .container:hover input ~ .checkmark {
+  background: linear-gradient(#25273d, #25273d) padding-box,
+    linear-gradient(135deg, #55ddff 0%, #c058f3 100%) border-box;
+  border-radius: 50%;
+  border: 1px solid transparent;
+}
+
+.item-dark div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

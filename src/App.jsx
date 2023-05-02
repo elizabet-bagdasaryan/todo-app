@@ -54,28 +54,46 @@ function App() {
 
   return (
     <div
-      className="App"
-      style={{ backgroundImage: isActive ? { DarkMobile } : { LightMobile } }}
+      className="page"
+      style={{
+        backgroundColor: isActive ? "#171823" : "white",
+      }}
     >
-      <header>
-        <h1>TODO </h1>
-        <Brightness3Icon
-          id="moon"
-          style={{
-            display: isActive ? "none" : "block",
-          }}
-          onClick={handleClick}
-        />
-        <LightModeIcon
-          id="sun"
-          style={{
-            display: isActive ? "block" : "none",
-          }}
-          onClick={handleClick}
-        />
-      </header>
-      <NewItem onSubmit={addTodo} />
-      <ToDos todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
+      <div
+        className="App"
+        style={{
+          backgroundImage: `url(${isActive ? DarkMobile : LightMobile})`,
+          backgroundSize: "100vw 50vh",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="main">
+          <header>
+            <h1>TODO </h1>
+            <Brightness3Icon
+              id="moon"
+              style={{
+                display: isActive ? "none" : "block",
+              }}
+              onClick={handleClick}
+            />
+            <LightModeIcon
+              id="sun"
+              style={{
+                display: isActive ? "block" : "none",
+              }}
+              onClick={handleClick}
+            />
+          </header>
+          <NewItem onSubmit={addTodo} isActive={isActive} />
+          <ToDos
+            todos={todos}
+            toggleTodo={toggleTodo}
+            deleteTodo={deleteTodo}
+            isActive={isActive}
+          />
+        </div>
+      </div>
     </div>
   );
 }
