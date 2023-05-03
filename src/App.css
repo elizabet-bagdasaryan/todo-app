@@ -1,12 +1,12 @@
 .App {
   background-image: url(./assets/light-mobile.jpg);
   background-repeat: no-repeat;
-  background-size: 100% 40%;
+  background-size: 100% 66%;
 }
 .App-dark {
   background-image: url(./assets/dark-mobile.jpg);
   background-repeat: no-repeat;
-  background-size: 100% 40%;
+  background-size: 100% 66%;
 }
 
 body {
