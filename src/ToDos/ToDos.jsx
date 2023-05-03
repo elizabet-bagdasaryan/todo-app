@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import ToDoItem from "./ToDoItem.jsx";
+import ToDoItem from "../ToDoItem/ToDoItem.jsx";
 
 import "./ToDos.css";
 

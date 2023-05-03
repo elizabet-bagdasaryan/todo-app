@@ -3,8 +3,8 @@ import { useEffect } from "react";
 import LightMobile from "./assets/light-mobile.jpg";
 import DarkMobile from "./assets/dark-mobile.jpg";
 
-import NewItem from "./NewItem.jsx";
-import ToDos from "./ToDos.jsx";
+import NewItem from "./NewItem/NewItem.jsx";
+import ToDos from "./ToDos/ToDos.jsx";
 import "./App.css";
 import Brightness3Icon from "@mui/icons-material/Brightness3";
 import LightModeIcon from "@mui/icons-material/LightMode";
@@ -87,14 +87,6 @@ function App() {
           />
         </div>
       </div>
-      <p
-        className="drag"
-        style={{
-          color: isActive ? "#5B5E7E" : "#9495a5",
-        }}
-      >
-        Drag and drop to reorder list
-      </p>
     </div>
   );
 }
