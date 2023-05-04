@@ -44,12 +44,7 @@ function ToDos({ todos, toggleTodo, deleteTodo, isActive }) {
   };
 
   return (
-    <div
-      className="list"
-      style={{
-        backgroundColor: isActive ? "#25273D" : "#fff",
-      }}
-    >
+    <div className="list">
       <div className={isActive ? "items-dark" : "items"}>
         {filteredTodos.map((todo) => {
           return (
