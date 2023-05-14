@@ -37,12 +37,11 @@ header h1 {
   cursor: pointer;
 }
 .page {
-  height: 100%;
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
 }
-.drag {
-  text-align: center;
-  font-weight: 600;
-}
+
 @media (min-width: 768px) {
   .App {
     background-image: url(./assets/light-desktop.png);
