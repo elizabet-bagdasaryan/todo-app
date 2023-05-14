@@ -37,7 +37,7 @@ header h1 {
   cursor: pointer;
 }
 .page {
-  height: 100vh;
+  height: 100%;
 }
 .drag {
   text-align: center;
