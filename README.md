@@ -2,7 +2,7 @@
 
 This is a simple Todo application built using REact.js. It allows users to create, manage, and organize their tasks in a user-friendly interface. With this application, you can keep track of your daily tasks, mark tasks as completed,choose predfered interafce display and more.
 
-![Alt text](desktop-preview.jpg)
+![Alt text](https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/llcq9eiv3ney5tkxgdtu.jpg)
 
 ## Features
 
